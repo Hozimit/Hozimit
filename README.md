@@ -14,3 +14,6 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+### 📊 我的常用开发语言
+
+![Your GitHub Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Hozimit&layout=compact&theme=vision-friendly-dark)
