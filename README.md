@@ -16,4 +16,4 @@ Here are some ideas to get you started:
 -->
 ### 📊 我的常用开发语言
 
-![Your GitHub Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Hozimit&layout=compact&theme=vision-friendly-dark)
+![Hozimit's Languages](https://github-readme-stats-one-bice.vercel.app/api/top-langs/?username=Hozimit&layout=compact&theme=vision-friendly-dark)
