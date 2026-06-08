@@ -1,3 +1,3 @@
-### 📊 我的常用开发语言
+### 📊 我的常用開發語言
 
-![Hozimit's Languages](你刚才在Vercel拿到的专属网址/api/top-langs/?username=Hozimit&layout=compact&theme=vision-friendly-dark)
+![Hozimit's Languages](https://github-readme-stats-9u89mxpg2-liang-zeyu-s-projects.vercel.app/api/top-langs/?username=Hozimit&layout=compact&theme=vision-friendly-dark)
