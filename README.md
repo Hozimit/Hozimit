@@ -1,3 +1,5 @@
+![My GitHub Languages](https://raw.githubusercontent.com/Hozimit/Hozimit/main/github-metrics.svg)
+
 ### 来和咱敞开天窗说亮话！
 
 咱是潜藏在人类社会里的血姬喔。自从人类发明了乒乓球游戏之后，咱的网瘾就彻底一发不可收拾了……QAQ
