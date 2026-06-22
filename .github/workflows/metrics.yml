@@ -1,0 +1,42 @@
+name: Generate GitHub Metrics Pie
+on:
+  # 每天午夜 12 点自动刷新一次数据
+  schedule: [{cron: "0 0 * * *"}]
+  # 支持你在后台手动点击按钮刷新
+  workflow_dispatch:
+  # 当你修改这个仓库的代码时也会触发刷新
+  push: {branches: ["master", "main"]}
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Languages Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          # 引入刚才在 Settings 里存好的钥匙
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # 输出的文件名，保存在仓库根目录
+          filename: github-metrics.svg
+          
+          # 必须设为空，代表只生成特定插件图表，不生成整张主页大图
+          base: ""
+          
+          # ---------------- 核心：语言插件配置 ----------------
+          plugin_languages: yes
+          
+          # 对应文档中的：plugin_languages_ignored（在此直接无视 Makefile、前端依赖等垃圾数据）
+          plugin_languages_ignored: >-
+            html, css, makefile, qmake, cmake, shell, json
+
+          # 对应文档中的：plugin_languages_details（展示饼图右侧的详细字节大小和百分比）
+          plugin_languages_details: bytes-size, percentage
+          
+          # 对应文档中的：plugin_languages_limit（最多展示多少种最常用的语言，这里设为 8 种）
+          plugin_languages_limit: 8
+          
+          # 如果有被过滤或者超出展示上限的语言，打包归类到 "Other" 中
+          plugin_languages_other: yes
