@@ -1,14 +1,9 @@
 name: Generate GitHub Metrics Pie
 
 on:
-  # 每天午夜 12 点自动刷新一次数据
   schedule:
     - cron: "0 0 * * *"
-
-  # 支持后台手动运行
   workflow_dispatch:
-
-  # 推送代码时刷新
   push:
     branches:
       - master
@@ -22,39 +17,23 @@ jobs:
       contents: write
 
     steps:
-      - name: Languages Metrics
+      - name: Languages & Habits Metrics
         uses: lowlighter/metrics@latest
 
         with:
-          # GitHub Token
           token: ${{ secrets.METRICS_TOKEN }}
-
-          # 输出文件
           filename: github-metrics.svg
-
-          # 不生成基础信息，只生成插件内容
           base: ""
 
-          # =========================
-          # Language Metrics 配置
-          # =========================
-
-          # 开启语言统计
           plugin_languages: yes
-
-          # 排除你的 nextchat 私有仓库
-          plugin_languages_skipped: >-
-            Hozimit/nextchat
-
-          # 忽略不需要统计的语言
-          plugin_languages_ignored: >-
-            html, css, makefile, qmake, cmake, shell, json
-
-          # 显示语言占比和代码大小
+          plugin_languages_skipped: Hozimit/nextchat
+          plugin_languages_ignored: html, css, makefile, qmake, cmake, shell, json
           plugin_languages_details: bytes-size, percentage
-
-          # 最多显示 8 种语言
           plugin_languages_limit: 8
-
-          # 其他语言归类 Other
           plugin_languages_other: yes
+
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
