@@ -29,5 +29,6 @@ jobs:
           plugin_languages_skipped: Hozimit/nextchat
           plugin_languages_ignored: html, css, makefile, qmake, cmake, shell, json
           plugin_languages_details: percentage
+          plugin_languages_details_bytes_size: no
           plugin_languages_limit: 8
           plugin_languages_other: yes
